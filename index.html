@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance System</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f0f2f5;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .video-container {
+      margin: 20px auto;
+    }
+    .actions {
+      margin-top: 30px;
+    }
+    .actions a, .actions button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #3498db;
+      color: white;
+      border: none;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    .actions a:hover, .actions button:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎓 Face Recognition Attendance System</h1>
+
+  <div class="video-container">
+    <img src="{{ url_for('video_feed') }}" width="620">
+  </div>
+
+  <div class="actions">
+   <a href="{{ url_for('start_class') }}">▶️ Start Class</a>
+   <a href="{{ url_for('end_class') }}" onclick="alert('Class ended. Emails will be sent.')">⏹ End Class</a>
+ </div>
+
+
+  <div class="actions">
+    <a href="{{ url_for('download_attendance') }}">📥 Download Attendance</a>
+    <a href="{{ url_for('view_attendance') }}">📊 View Attendance</a>
+  </div>
+</body>
+</html>
